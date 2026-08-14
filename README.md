@@ -32,8 +32,6 @@ El sistema utiliza captura de video en vivo para extraer, decodificar y auditar 
 | :---: | :---: |
 | ![Escaneo Exitoso](docs/screenshots/valido.png) | ![Error de Escaneo](docs/screenshots/invalido.png) |
 
-> *Nota: Colocar las capturas de pantalla en la ruta `docs/screenshots/`.*
-
 ---
 
 ## Requisitos del Sistema
