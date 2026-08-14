@@ -6,7 +6,7 @@ Sistema de validación en tiempo real para procesos de reetiquetado e ingreso de
 
 ## Módulos y Arquitectura del Proyecto
 
-El sistema utiliza captura de video en vivo para extraer, decodificar y auditar códigos de barras (EAN-13, UPC, Code 128) frente a las reglas de negocio predefinidas.
+El sistema utiliza captura de video en vivo para extraer, decodificar y auditar códigos de barras.
 
 ```text
 [ Cámara / Stream Video ]
@@ -30,7 +30,7 @@ El sistema utiliza captura de video en vivo para extraer, decodificar y auditar 
 
 | Escaneo Exitoso (Match) | Código No Autorizado / Error |
 | :---: | :---: |
-| ![Escaneo Exitoso](docs/screenshots/scan_ok.png) | ![Error de Escaneo](docs/screenshots/scan_error.png) |
+| ![Escaneo Exitoso](docs/screenshots/valido.png) | ![Error de Escaneo](docs/screenshots/invalido.png) |
 
 > *Nota: Colocar las capturas de pantalla en la ruta `docs/screenshots/`.*
 
@@ -42,13 +42,15 @@ El sistema utiliza captura de video en vivo para extraer, decodificar y auditar 
 * Linux (probado en Fedora Linux) / macOS / Windows
 
 ### Dependencias de Sistema (Fedora Linux)
-Es necesario instalar la biblioteca nativa `zbar` para la decodificación de patrones de código de barras a nivel de C:
+Es necesario instalar la biblioteca nativa `zbar` para la decodificación de patrones de código de barras:
 
 ```bash
 sudo dnf install zbar
 ```
 
-Entorno de Software
+### Entorno de Software
+
+``` bash
 Python 3.10 o superior
 
 opencv-python >= 4.8.0
@@ -56,12 +58,13 @@ opencv-python >= 4.8.0
 pyzbar >= 0.1.9
 
 numpy >= 1.24.0
+```
 
-Instalación y Configuración
+### Instalación y Configuración
 Clonar el repositorio:
 
 ```bash
-git clone [https://github.com/TU_USUARIO/barcode-validator.git](https://github.com/TU_USUARIO/barcode-validator.git)
+git clone [https://github.com/dianAnton/project_barcode_validator.git](https://github.com/dianAnton/project_barcode_validator.git)
 cd barcode-validator
 ```
 
