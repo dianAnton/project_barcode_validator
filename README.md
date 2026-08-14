@@ -8,6 +8,7 @@ Sistema de validación en tiempo real para procesos de reetiquetado e ingreso de
 
 El sistema utiliza captura de video en vivo para extraer, decodificar y auditar códigos de barras (EAN-13, UPC, Code 128) frente a las reglas de negocio predefinidas.
 
+```text
 [ Cámara / Stream Video ]
 │
 ▼
@@ -20,6 +21,7 @@ El sistema utiliza captura de video en vivo para extraer, decodificar y auditar 
 ▼                 ▼
 [ Match / OK ]   [ Error / Desconocido ]
 (Cuadro Verde)   (Cuadro Rojo)
+```
 
 
 ---
@@ -44,6 +46,8 @@ Es necesario instalar la biblioteca nativa `zbar` para la decodificación de pat
 
 ```bash
 sudo dnf install zbar
+```
+
 Entorno de Software
 Python 3.10 o superior
 
@@ -56,21 +60,28 @@ numpy >= 1.24.0
 Instalación y Configuración
 Clonar el repositorio:
 
-Bash
+```bash
 git clone [https://github.com/TU_USUARIO/barcode-validator.git](https://github.com/TU_USUARIO/barcode-validator.git)
 cd barcode-validator
+```
+
 Crear y activar el entorno virtual:
 
-Bash
+``` bash
 python3 -m venv venv
 source venv/bin/activate
+```
+
 Instalar dependencias de Python:
 
-Bash
+``` bash
 pip install --upgrade pip
 pip install -r requirements.txt
+```
+
 Estructura del Proyecto
-Plaintext
+
+```Plaintext
 barcode-validator/
 ├── README.md
 ├── requirements.txt
@@ -80,39 +91,15 @@ barcode-validator/
 └── src/
     ├── database.py       # Definición de reglas de negocio y mapeo de SKUs
     └── scanner.py        # Captura de video, procesamiento de frames y renderizado
+```
+
 Uso
 Para iniciar el sistema de escaneo con la cámara predeterminada (/dev/video0):
 
-Bash
+``` bash
 python src/scanner.py
 Presione la tecla q dentro de la ventana de video para finalizar la ejecución.
+```
 
-Hoja de Ruta (Roadmap)
-[x] Prototipo funcional de decodificación en tiempo real (OpenCV + pyzbar).
 
-[x] Mapeo básico de reglas de validación local.
 
-[ ] Integración de interfaz web interactiva (FastAPI + WebSockets).
-
-[ ] Implementación de alertas audibles para operarios.
-
-[ ] Soporte para cámaras IP y dispositivos móviles vía RTSP/HTTP.
-
-[ ] Módulo OCR (PaddleOCR/EasyOCR) para validación de texto de empaque.
-
-[ ] Persistencia de eventos de lectura en base de datos PostgreSQL.
-
-Contribución
-Haga un Fork del proyecto.
-
-Cree una rama para su funcionalidad (git checkout -b feature/nueva-funcionalidad).
-
-Realice sus cambios y confirme los commits (git commit -m 'Add: nueva funcionalidad').
-
-Envíe los cambios a su rama (git push origin feature/nueva-funcionalidad).
-
-Abra un Pull Request.
-
-Licencia
-Este proyecto está bajo la Licencia MIT.
-EOF
